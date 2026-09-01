@@ -1,3 +1,6 @@
+import { Mail } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './icons';
+
 export default function Footer() {
     return (
         <footer>
@@ -20,13 +23,13 @@ export default function Footer() {
 
                 <div>
                     <a href="https://github.com/Gladiolus-bat" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        GitHub
+                        <GithubIcon size={18} />
                     </a>
                     <a href="https://www.linkedin.com/in/sabrina-pradhan/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        LinkedIn
+                        <LinkedinIcon size={18} />
                     </a>
                     <a href="mailto:pradhansabrina32@gmail.com" aria-label="Email">
-                        Email
+                        <Mail size={18} />
                     </a>
                 </div>
             </div>
