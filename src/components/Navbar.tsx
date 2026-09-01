@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { motion } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
     { id: "home", label: "Home" },
@@ -11,8 +12,12 @@ const navItems = [
 
 export default function Navbar() {
     const [activeSection, setActiveSection] = useState<string>("home");
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
+        if (location.pathname !== '/') return;
+
         const sections = [
             "home",
             "about",
@@ -35,7 +40,7 @@ export default function Navbar() {
                         scrollPosition >= sectionTop &&
                         scrollPosition < sectionTop + sectionHeight
                     ) {
-                        setActiveSection(sectionId === "skills" ? "about" : sectionId);
+                        setActiveSection(sectionId === "skills" ? "home" : sectionId);
                         break;
                     }
                 }
@@ -43,16 +48,32 @@ export default function Navbar() {
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [location.pathname]);
 
     const scrollToSection = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
         e.preventDefault();
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const offsetTop =
+                        element.getBoundingClientRect().top + window.scrollY - 200;
+                    window.scrollTo({ top: offsetTop, behavior: "smooth" });
+                }
+            }, 100);
+            return;
+        }
+
         const element = document.getElementById(id);
         if (element) {
-            const offsetTop =
-                element.getBoundingClientRect().top + window.scrollY - 200;
-            window.scrollTo({ top: offsetTop, behavior: "smooth" });
+            const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth',
+            });
             setActiveSection(id);
         }
     };
@@ -68,8 +89,7 @@ export default function Navbar() {
                             key={item.id}
                             href={`#${item.id}`}
                             onClick={(e) => scrollToSection(e, item.id)}
-                            className="relative px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-200 outline-none select-none z-10"
-                        >
+                            className="relative px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-200 outline-none select-none z-10">
                             {isActive && (
                                 <motion.div layoutId="flowingActiveTabPill"
                                     className="absolute inset-0 bg-[#4A5759] rounded-full shadow-md shadow-[#4A5759]/25 -z-10"
@@ -80,8 +100,7 @@ export default function Navbar() {
                                     }} />
                             )}
 
-                            <span className={`transition-colors duration-200 ${isActive ? 'text-[#F7E1D7]' : 'text-[#4A5759]/80 hover:text-[#4A5759]'}`}
-                            >
+                            <span className={`transition-colors duration-200 ${isActive ? 'text-[#F7E1D7]' : 'text-[#4A5759]/80 hover:text-[#4A5759]'}`}>
                                 {item.label}
                             </span>
                         </a>
