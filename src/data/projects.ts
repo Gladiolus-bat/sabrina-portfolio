@@ -14,3 +14,20 @@ export interface Project {
     liveLink: string;
 }
 
+export const projectsData: Project[] = [
+    {
+        id: '',
+        title: '',
+        shortDescription: '',
+        category: '',
+        badge: '',
+        tags: ['', '', ''],
+        fullDescription: '',
+        challenge: '',
+        solution: '',
+        features: ['', '', ''],
+        image: '',
+        githubLink: '',
+        liveLink: '',
+    }
+];
