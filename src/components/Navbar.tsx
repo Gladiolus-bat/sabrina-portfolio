@@ -58,8 +58,8 @@ export default function Navbar() {
     };
 
     return (
-        <header>
-            <nav>
+        <header className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-auto">
+            <nav className="flex items-center gap-1 sm:gap-1.5 p-1.5 bg-white/[0.05] backdrop-blur-x2 border border-white/30 rounded-full shadow-[0_8px_32px_rgba(75,87,89,0.08)]">
                 {navItems.map((item) => {
                     const isActive = activeSection === item.id;
 
@@ -68,6 +68,7 @@ export default function Navbar() {
                             key={item.id}
                             href={`#${item.id}`}
                             onClick={(e) => scrollToSection(e, item.id)}
+                            className="relative px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-200 outline-none select-none z-10"
                         >
                             {isActive && (
                                 <motion.div layoutId="flowingActiveTabPill"
