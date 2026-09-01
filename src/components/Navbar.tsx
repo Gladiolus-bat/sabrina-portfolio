@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
-    const [activeSection, setActiveSection] = useState("home");
+    const [activeSection, setActiveSection] = useState<string>("home");
 
     useEffect(() => {
         const sections = [
@@ -26,10 +26,10 @@ export default function Navbar() {
             const scrollPosition = window.scrollY + 220;
 
             for (const sectionId of sections) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    const sectionTop = element.offsetTop;
-                    const sectionHeight = element.offsetHeight;
+                const elements = document.getElementById(sectionId);
+                if (elements) {
+                    const sectionTop = elements.offsetTop;
+                    const sectionHeight = elements.offsetHeight;
 
                     if (
                         scrollPosition >= sectionTop &&
@@ -72,7 +72,7 @@ export default function Navbar() {
                         >
                             {isActive && (
                                 <motion.div layoutId="flowingActiveTabPill"
-                                    className=""
+                                    className="absolute inset-0 bg-[#4A5759] rounded-full shadow-md shadow-[#4A5759]/25 -z-10"
                                     transition={{
                                         type: 'spring',
                                         stiffness: 500,
