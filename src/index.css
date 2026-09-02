@@ -6,13 +6,13 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF8F5;
-  color: #4A5759;
+  background-color: #faf8f5;
+  color: #4a5759;
 }
 
 @layer utilities {
@@ -36,7 +36,8 @@ body {
   }
 
   @keyframes blob-morph {
-    0%, 100% {
+    0%,
+    100% {
       border-radius: 62% 38% 70% 30% / 45% 65% 35% 55%;
     }
     33% {
