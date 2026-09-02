@@ -9,7 +9,7 @@ export interface Experience {
     periodBg: string;
 }
 
-export const experiencesData: Experience[] = [
+export const experienceData: Experience[] = [
     {
         id: '1',
         title: '',
