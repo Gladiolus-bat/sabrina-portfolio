@@ -1,37 +1,41 @@
 export interface Experience {
+    id: string;
     title: string;
-    startYear: string;
-    endYear: string;
+    period: string;
+    highlights: string[];
     company: string;
-    point1: string;
-    point2: string;
-    point3: string;
+    dotColor: string;
+    borderHoverColor: string;
+    periodBg: string;
 }
 
 export const experiencesData: Experience[] = [
     {
+        id: '1',
         title: '',
-        startYear: '',
-        endYear: '',
+        period: '',
+        highlights: [],
         company: '',
-        point1: '',
-        point2: '',
-        point3: '',
+        dotColor: '',
+        borderHoverColor: '',
+        periodBg: '',
     }, {
+        id: '2',
         title: '',
-        startYear: '',
-        endYear: '',
+        period: '',
+        highlights: [],
         company: '',
-        point1: '',
-        point2: '',
-        point3: '',
+        dotColor: '',
+        borderHoverColor: '',
+        periodBg: '',
     }, {
+        id: '3',
         title: '',
-        startYear: '',
-        endYear: '',
+        period: '',
+        highlights: [],
         company: '',
-        point1: '',
-        point2: '',
-        point3: '',
+        dotColor: '',
+        borderHoverColor: '',
+        periodBg: '',
     }
 ];
