@@ -85,12 +85,26 @@ export default function ProjectDetails() {
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"/>
+                            className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#4A5759]/30 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                 </div>
 
-
+                {/* Tech Stack Pills */}
+                <div className="p-6 bg-[#F7E1D7]/50 rounded-3xl border border-[#DEDBD2] shadow-xs mb-14">
+                    <h2 className="text-xs font-bold uppercase tracking-widest text-[#4A5759] mb-3 flex items-center gap-2">
+                        Technologies & Tools Used
+                    </h2>
+                    <div className="flex flex-wrap gap-2.5">
+                        {project.tags.map((tag) => (
+                            <span
+                                key={tag}
+                                className="px-4 py-2 bg-[#FAF8F5] text-[#4A5759] border border-[#DEDBD2] font-bold text-xs sm:text-sm rounded-xl shadow-xs">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                </div>
             </main>
         </div>
     );
