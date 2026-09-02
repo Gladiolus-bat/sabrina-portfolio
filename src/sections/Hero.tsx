@@ -105,7 +105,7 @@ export default function Hero() {
             <a
                 href="#about"
                 onClick={(e) => scrollToSection(e, 'about')}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#4A5759]/70 hover:text-[#4A5759] transition-colors"
+                className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-[#4A5759]/70 hover:text-[#4A5759] transition-colors"
                 aria-label="Discover">
                 <span className="text-xs font-bold tracking-wider uppercase">Discover</span>
                 <ChevronDown size={22} className="animate-bounce" />
