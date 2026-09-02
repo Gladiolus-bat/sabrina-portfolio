@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from "../data/projects";
 import { GithubIcon } from "../components/icons";
-import { ArrowLeft, ExternalLink, ShieldAlert, Lightbulb } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldAlert, Lightbulb, CheckCircle2 } from 'lucide-react';
 
 export default function ProjectDetails() {
     const { id } = useParams();
@@ -140,8 +140,49 @@ export default function ProjectDetails() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Key Features Sidebar */}
+                    <div className="md:col-span-1">
+                        <div className="p-7 bg-[#F7E1D7]/50 rounded-3xl border border-[#DEDBD2] shadow-xs sticky top-28">
+                            <h3 className="text-lg font-bold text-[#4A5759] mb-5">Key Highlights</h3>
+
+                            <ul className="space-y-4">
+                                {project.features.map((feature, index) => (
+                                    <li key={index} className="flex items-start gap-3 text-sm text-[#4A5759]/90 leading-relaxed">
+                                        <CheckCircle2 size={18} className="text-[#4A5759] flex-shrink-0 mt-0.5" />
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </main>
-        </div>
+
+                {/* More Projects Section */}
+                <section className="pt-10 border-t border-[#DEDBD2]">
+                    <h2 className="text-2xl font-bold text-[#4A5759] mb-8 text-center sm:text-left">
+                        Explore More Projects
+                    </h2>
+
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        {otherProjects.map((p) => (
+                            <Link key={p.id} to={`/project/${p.id}`}
+                                className="group p-5 bg-[#FAF8F5] hover:bg-[#F7E1D7]/60 border border-[#DEDBD2] hover:border-[#B0C4B1] rounded-3xl shadow-xs hover:shadow-md transition-all duration-300 flex items-center gap-5">
+
+                                <div className="w-20 h-20 rounded-2xl overflow-hidden bg-[#DEDBD2] flex-shrink-0">
+                                    <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                                </div>
+
+                                <div className="flex-1">
+                                    <span className="text-[11px] font-bold text-[#4A5759] uppercase tracking-wide">{p.category}</span>
+                                    <h4 className="font-bold text-[#4A5759] text-base group-hover:underline transition-all">{p.title}</h4>
+                                    <p className="text-xs text-[#4A5759]/70 line-clamp-1 mt-1">{p.shortDescription}</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+            </main >
+        </div >
     );
 }
