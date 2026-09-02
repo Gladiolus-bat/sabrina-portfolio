@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from "../data/projects";
 import { GithubIcon } from "../components/icons";
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft, ExternalLink, ShieldAlert, Lightbulb } from 'lucide-react';
 
 export default function ProjectDetails() {
     const { id } = useParams();
@@ -103,6 +103,42 @@ export default function ProjectDetails() {
                                 {tag}
                             </span>
                         ))}
+                    </div>
+                </div>
+
+                {/* In-depth Details Grid */}
+                <div className="grid md:grid-cols-3 gap-10 mb-14">
+                    <div className="md:col-span-2 space-y-8">
+                        <section className="bg-[#FAF8F5] p-8 rounded-3xl border border-[#DEDBD2] shadow-xs">
+                            <h2 className="text-2xl font-bold text-[#4A5759] mb-4">Project Overview</h2>
+                            <p className="text-[#4A5759]/85 leading-relaxed text-base">
+                                {project.fullDescription}
+                            </p>
+                        </section>
+
+                        <div className="grid sm:grid-cols-2 gap-6">
+                            {/* Challenge Card */}
+                            <div className="p-6 bg-[#EDAFB8]/20 rounded-3xl border border-[#EDAFB8]/60">
+                                <div className="w-10 h-10 rounded-xl bg-[#EDAFB8]/40 text-[#4A5759] flex items-center justify-center mb-3">
+                                    <ShieldAlert size={20} />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#4A5759] mb-2">The Challenge</h3>
+                                <p className="text-sm text-[#4A5759]/85 leading-relaxed">
+                                    {project.challenge}
+                                </p>
+                            </div>
+
+                            {/* Solution Card */}
+                            <div className="p-6 bg-[#B0C4B1]/25 rounded-3xl border border-[#B0C4B1]">
+                                <div className="w-10 h-10 rounded-xl bg-[#B0C4B1]/40 text-[#4A5759] flex items-center justify-center mb-3">
+                                    <Lightbulb size={20} />
+                                </div>
+                                <h3 className="text-lg font-bold text-[#4A5759] mb-2">The Solution</h3>
+                                <p className="text-sm text-[#4A5759]/85 leading-relaxed">
+                                    {project.solution}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
