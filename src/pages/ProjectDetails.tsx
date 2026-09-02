@@ -79,6 +79,17 @@ export default function ProjectDetails() {
                     </div>
                 </div>
 
+                {/* Project Image Container */}
+                <div className="relative w-full rounded-3xl overflow-hidden border-2 border-[#DEDBD2] shadow-xl bg-[#DEDBD2]/40 mb-14 group">
+                    <div className="w-full h-80 sm:h-[460px] relative overflow-hidden bg-[#DEDBD2]">
+                        <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"/>
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#4A5759]/30 via-transparent to-transparent pointer-events-none"></div>
+                    </div>
+                </div>
+
 
             </main>
         </div>
