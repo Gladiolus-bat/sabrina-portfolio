@@ -5,6 +5,7 @@ import Skills from '../sections/Skills';
 import About from '../sections/About';
 import Projects from '../sections/Projects';
 import Contact from '../sections/Contact';
+import Experience from '../sections/Experience';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Skills />
       <About />
       <Projects />
+      <Experience />
       <Contact />
       <Footer />
     </div>
