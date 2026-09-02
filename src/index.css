@@ -14,3 +14,20 @@ body {
   background-color: #FAF8F5;
   color: #4A5759;
 }
+
+@layer utilities {
+  @keyframes scroll-left {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: scroll-left 50s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+}
