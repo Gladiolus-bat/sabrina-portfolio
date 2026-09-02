@@ -1,6 +1,6 @@
-import { useEffect, useState, type MouseEvent } from "react";
-import { motion } from "framer-motion";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState, type MouseEvent } from 'react';
+import { motion } from 'framer-motion';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const navItems = [
     { id: "home", label: "Home" },
@@ -60,7 +60,7 @@ export default function Navbar() {
                 const element = document.getElementById(id);
                 if (element) {
                     const offsetTop =
-                        element.getBoundingClientRect().top + window.scrollY - 200;
+                        element.getBoundingClientRect().top + window.pageYOffset - 90;
                     window.scrollTo({ top: offsetTop, behavior: "smooth" });
                 }
             }, 100);
@@ -79,8 +79,8 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-auto">
-            <nav className="flex items-center gap-1 sm:gap-1.5 p-1.5 bg-white/[0.05] backdrop-blur-x2 border border-white/30 rounded-full shadow-[0_8px_32px_rgba(75,87,89,0.08)]">
+        <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-auto">
+            <nav className="flex items-center gap-1 sm:gap-1.5 p-1.5 bg-white/[0.05] backdrop-blur-x1 border border-white/30 rounded-full shadow-[0_8px_32px_rgba(74,87,89,0.08)]">
                 {navItems.map((item) => {
                     const isActive = activeSection === item.id;
 
@@ -90,13 +90,14 @@ export default function Navbar() {
                             href={`#${item.id}`}
                             onClick={(e) => scrollToSection(e, item.id)}
                             className="relative px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-colors duration-200 outline-none select-none z-10">
+                            {/* Smooth flowing liquid indicator pill */}
                             {isActive && (
                                 <motion.div layoutId="flowingActiveTabPill"
                                     className="absolute inset-0 bg-[#4A5759] rounded-full shadow-md shadow-[#4A5759]/25 -z-10"
                                     transition={{
                                         type: 'spring',
-                                        stiffness: 500,
-                                        damping: 30,
+                                        stiffness: 420,
+                                        damping: 32,
                                     }} />
                             )}
 
