@@ -1,3 +1,7 @@
+import havenImg from '../assets/haven.png';
+import jmpImg from '../assets/javascript-mini-programs.png';
+import xiangtanImg from '../assets/xinagtan-xuge.png';
+
 export interface Project {
     id: string;
     title: string;
@@ -42,7 +46,7 @@ export const projectsData: Project[] = [
         challenge: 'The main challenge was designing a professional online presence for an overseas B2B company whose products span several different industries. The website needed to present a large and diverse product range clearly while building trust with international customers and making it easy for potential buyers to enquire about products.',
         solution: 'Created a structured and responsive corporate website with dedicated product categories, company information, business strengths, and contact sections. Products are presented as a catalogue for customers to browse, while prominent contact options allow interested buyers to directly reach the company and proceed with their purchase enquiries.',
         features: ['Product catalogue', 'Company profile', 'International customer focus', 'Direct contact and enquiry options', 'Responsive design'],
-        image: '',
+        image: xiangtanImg,
         githubLink: '',
         liveLink: 'https://xiangtanxugecommerce.com/',
     }, {
@@ -56,7 +60,7 @@ export const projectsData: Project[] = [
         challenge: 'The main challenge was implementing several different types of interactive applications while maintaining consistent behaviour and a responsive interface. Each mini-project required different JavaScript concepts, including event handling, timers, random number generation, input validation, dynamic DOM updates, and external API communication.',
         solution: 'Built each mini-program as an independent interactive module using vanilla JavaScript, with reusable HTML and CSS patterns across the collection. JavaScript event listeners and DOM manipulation were used for user interactions, while Fetch API was used to retrieve real-time weather data from the OpenWeather API. Responsive layouts were implemented to ensure the applications remained usable across different screen sizes.',
         features: ['Counter', 'Number Guessing Game', 'Dice Roller', 'Temperature Converter', 'Digital Clock', 'Stopwatch', 'Calculator', 'Rock Paper Scissors', 'Real-time Weather App'],
-        image: '',
+        image: jmpImg,
         githubLink: 'https://github.com/Gladiolus-bat/Mini-Programs',
         liveLink: 'https://gladiolus-bat.github.io/Mini-Programs/',
     }, {
@@ -70,7 +74,7 @@ export const projectsData: Project[] = [
         challenge: 'Building a multi-page marketplace with vanilla JavaScript required coordinating navigation, shared layouts, product interactions, forms, and responsive design across multiple pages. An additional challenge was integrating external team websites into the platform while maintaining a seamless experience and making the different projects feel like part of one interconnected web ecosystem.',
         solution: 'Structured Haven into interconnected HTML pages with shared CSS and JavaScript functionality. Implemented product browsing, filtering, cart interactions, client-side form validation, and responsive layouts. External links to participating teams’ websites were incorporated into the platform, allowing users to move between different projects and demonstrating the interconnected "Mini Internet" concept.',
         features: ['Multi-page e-commerce interface', 'Category-based browsing', 'Shopping cart', 'Payment Interface', 'Interactive JavaScript features', 'Interconnected Mini Internet ecosystem'],
-        image: '',
+        image: havenImg,
         githubLink: 'https://github.com/Gladiolus-bat/Haven',
         liveLink: 'https://gladiolus-bat.github.io/Haven/',
     }, {
