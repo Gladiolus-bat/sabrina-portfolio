@@ -62,7 +62,7 @@ export default function Hero() {
                                 <GithubIcon size={19} />
                             </a>
                             <a
-                                href="https://linkedin.com/in/sabrinapradhan"
+                                href="https://www.linkedin.com/in/sabrina-pradhan/"
                                 target="_blank"
                                 rel="noreferrer"
                                 className="p-2 text-[#4A5759] hover:text-[#FAF8F5] hover:bg-[#4A5759] rounded-full transition-all"
