@@ -1,6 +1,9 @@
 import havenImg from '../assets/haven.png';
 import jmpImg from '../assets/javascript-mini-programs.png';
 import xiangtanImg from '../assets/xinagtan-xuge.png';
+import breezeImg from '../assets/breeze.png';
+import dsaImg from '../assets/dsa-adventure.png';
+import quickbiteImg from '../assets/quickbite.png';
 
 export interface Project {
     id: string;
@@ -32,7 +35,7 @@ export const projectsData: Project[] = [
         features: ['Multi-outlet food browsing', 'Search and filter menu items', 'Instant and scheduled orders', 'Profile and order history management',
             'Favourite food items', 'Real-time order status management', 'Role-based authentication', 'Admin menu and outlet management' 
         ],
-        image: '',
+        image: quickbiteImg,
         githubLink: 'https://github.com/Swornadt/quickbite',
         liveLink: '',
     }, {
@@ -88,7 +91,7 @@ export const projectsData: Project[] = [
         challenge: 'Building a dual-sided platform required coordinating two different user workflows while keeping authentication, authorisation, hotel data, room availability, bookings, and user information consistent. Another challenge was handling image uploads and protecting owner-only operations such as managing rooms and viewing hotel bookings.',
         solution: 'Implemented a RESTful Express backend with MongoDB and Mongoose models for users, hotels, rooms, and bookings. JWT-based authentication and role-based middleware were used to restrict owner functionality. Cloudinary was integrated for image storage, while React Context was used to manage authentication and application navigation on the frontend.',
         features: ['Traveller and hotel-owner workflows', 'JWT suthentication', 'Hotel registration', 'Room browsing and booking', 'Hotel owner dashboard', 'Room availability management', 'Profile management', 'Cloudinary integration'],
-        image: '',
+        image: breezeImg,
         githubLink: 'https://github.com/Gladiolus-bat/Breeze',
         liveLink: '',
     }, {
@@ -102,7 +105,7 @@ export const projectsData: Project[] = [
         challenge: 'Learning Data Structures and Algorithms can be difficult for beginners when concepts are taught mainly through theory. Students often need practical ways to understand how algorithms and data structures work and how their operations affect the result.',
         solution: 'DSA Adventure turns fundamental DSA concepts into interactive challenges where players learn by performing algorithmic operations themselves. Each mini-game focuses on a specific concept, allowing learners to practise sorting, searching, stack operations, and queue operations while receiving immediate feedback and tracking their progress.',
         features: ['Four interactive DSA mini-games', 'Bubble Sort challenge', 'Stack PUSH and POP challenge', 'Queue ENQUEUE and DEQUEUE challenge', 'Binary Search challenge', 'Score Tracking', 'Tutorial for each game', 'Visual feedback for each game', 'Reset and replay functionality'],
-        image: '',
+        image: dsaImg,
         githubLink: 'https://github.com/Gladiolus-bat/DSA-Adventure',
         liveLink: '',
     },
