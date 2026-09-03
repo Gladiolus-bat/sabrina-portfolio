@@ -62,20 +62,24 @@ export default function ProjectDetails() {
                     </p>
 
                     <div className="flex flex-wrap items-center gap-4">
-                        <a
-                            href={project.liveLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#4A5759] text-[#FAF8F5] rounded-full font-bold text-sm shadow-md hover:bg-[#3B4648] hover:shadow-lg transition-all">
-                            Live Demo <ExternalLink size={16} />
-                        </a>
-                        <a
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#F7E1D7] border border-[#DEDBD2] text-[#4A5759] rounded-full font-bold text-sm hover:bg-[#EDAFB8]/50 transition-all">
-                            <GithubIcon size={18} /> Source Code
-                        </a>
+                        {project.liveLink && (
+                            <a
+                                href={project.liveLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-[#4A5759] text-[#FAF8F5] rounded-full font-bold text-sm shadow-md hover:bg-[#3B4648] hover:shadow-lg transition-all">
+                                Live Demo <ExternalLink size={16} />
+                            </a>
+                        )}
+                        {project.githubLink && (
+                            <a
+                                href={project.githubLink}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 px-6 py-3 bg-[#F7E1D7] border border-[#DEDBD2] text-[#4A5759] rounded-full font-bold text-sm hover:bg-[#EDAFB8]/50 transition-all">
+                                <GithubIcon size={18} /> Source Code
+                            </a>
+                        )}
                     </div>
                 </div>
 
