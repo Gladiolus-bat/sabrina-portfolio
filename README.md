@@ -94,4 +94,4 @@ If you use client-side routing on Netlify or Vercel, add a rewrite rule that sen
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is source-available under a [Non-Commercial License](LICENSE). You may view and learn from the code, but commercial use is not permitted without written permission. Personal content (text, images, resume) may not be reused.
